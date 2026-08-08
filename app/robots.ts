@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://webovens.agency/sitemap.xml',
+    sitemap: 'https://webovens.in/sitemap.xml',
   };
 }
