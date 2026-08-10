@@ -42,9 +42,9 @@ export default function Contact() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-6">
-            <a href="mailto:hello@webovens.com" id="contact-email" className="group relative px-8 py-4 border border-wo-amber/30 bg-wo-amber/5 font-mono text-[11px] uppercase tracking-[0.2em] text-wo-amber hover:bg-wo-amber hover:text-wo-bg transition-all duration-500">
+            <a href="mailto:contact@webovens.in" id="contact-email" className="group relative px-8 py-4 border border-wo-amber/30 bg-wo-amber/5 font-mono text-[11px] uppercase tracking-[0.2em] text-wo-amber hover:bg-wo-amber hover:text-wo-bg transition-all duration-500">
               <span className="flex items-center gap-3">
-                hello@webovens.com
+                contact@webovens.in
                 <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /></svg>
               </span>
             </a>

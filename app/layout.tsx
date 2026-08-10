@@ -81,7 +81,7 @@ const jsonLd = {
   logo: 'https://webovens.agency/logo.png',
   contactPoint: {
     '@type': 'ContactPoint',
-    email: 'hello@webovens.com',
+    email: 'contact@webovens.in',
     contactType: 'customer service',
   },
   sameAs: [

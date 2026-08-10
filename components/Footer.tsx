@@ -75,8 +75,8 @@ export default function Footer() {
           {/* Column 3: Contact */}
           <div>
             <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-wo-amber/30 block mb-6">{'// CONNECT'}</span>
-            <a href="mailto:hello@webovens.com" className="font-mono text-[12px] text-wo-text-muted/60 hover:text-wo-amber transition-colors duration-300 block mb-4">
-              hello@webovens.com
+            <a href="mailto:contact@webovens.in" className="font-mono text-[12px] text-wo-text-muted/60 hover:text-wo-amber transition-colors duration-300 block mb-4">
+              contact@webovens.in
             </a>
             <div className="flex flex-wrap gap-4">
               {socials.map((social, i) => (
