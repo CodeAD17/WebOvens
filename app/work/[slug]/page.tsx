@@ -201,7 +201,7 @@ const projectDetails: Record<
       'Education Cloud & Grade Report Generator',
       'Einstein AI ATS & Automated HR Leave Engine',
     ],
-    heroVideo: '', // Insert your external video URL here (e.g. https://your-cdn.com/algocirrus-demo.mp4)
+    heroVideo: 'https://res.cloudinary.com/dccxuuqis/video/upload/v1786368560/AlgoCirrus__Your_Salesforce_Consulting_AppExchange_Partner_-_Brave_2026-08-09_17-29-11_bbxygg.mp4',
     heroImage: '/algoCirrus/hero.png',
     systemOverview: {
       philosophy: "Architecting future-ready CRM ecosystems, agentic AI frameworks, and multi-cloud solutions.",
