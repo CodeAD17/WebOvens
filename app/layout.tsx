@@ -81,7 +81,7 @@ const jsonLd = {
   logo: 'https://webovens.agency/logo.png',
   contactPoint: {
     '@type': 'ContactPoint',
-    email: 'contact@webovens.in',
+    email: 'webovens.in@gmail.com',
     contactType: 'customer service',
   },
   sameAs: [
@@ -93,7 +93,6 @@ const jsonLd = {
 };
 
 import SmoothScroll from '@/components/SmoothScroll';
-import CustomCursor from '@/components/CustomCursor';
 import MobileBottomNav from '@/components/MobileBottomNav';
 
 export default function RootLayout({
@@ -113,10 +112,9 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="font-sans bg-wo-bg text-wo-text antialiased selection:bg-wo-amber selection:text-wo-bg custom-cursor-active pb-16 md:pb-0"
+        className="font-sans bg-wo-bg text-wo-text antialiased selection:bg-wo-amber selection:text-wo-bg pb-16 md:pb-0"
         suppressHydrationWarning
       >
-        <CustomCursor />
         {/* Scanline overlay — very subtle CRT effect */}
         <div className="scanline-overlay" aria-hidden="true" />
         <SmoothScroll>{children}</SmoothScroll>
