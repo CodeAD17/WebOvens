@@ -2,14 +2,18 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import ScrollRevealText from './ScrollRevealText';
+import ContactForm from './ContactForm';
 import logo from '../logo.png';
 
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start 0.8', 'end end'] });
   const glowOpacity = useTransform(scrollYProgress, [0, 0.5], [0, 0.3]);
+  const pathname = usePathname();
+  const isContactPage = pathname === '/contact';
 
   return (
     <section ref={sectionRef} id="contact" className="bg-wo-bg relative overflow-hidden" aria-labelledby="contact-heading">
@@ -25,35 +29,57 @@ export default function Contact() {
       </div>
 
       {/* Main CTA */}
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12 xl:px-16 py-24 md:py-32 lg:py-40 relative z-10">
-        <div className="max-w-5xl mx-auto text-center mb-20">
-          <ScrollRevealText
-            text="Let's build something iconic together. Your vision deserves nothing less than extraordinary."
-            as="h2"
-            className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-[84px] leading-[1.05] tracking-tight"
-            revealStart={0.9}
-            revealEnd={0.3}
-          />
-        </div>
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 xl:px-16 py-20 md:py-28 lg:py-32 relative z-10">
+        {isContactPage ? (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left side: Space / VR Image Visual */}
+            <div className="lg:col-span-6 relative w-full aspect-square overflow-hidden bg-transparent">
+              <Image 
+                src="/Gemini_Generated_Image_wigy80wigy80wigy-watermark-removed.png" 
+                alt="Digital Visionary Space" 
+                fill
+                className="object-cover opacity-100"
+                priority
+              />
+            </div>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="flex flex-col items-center gap-12">
-          <p className="font-mono text-[12px] md:text-[14px] text-wo-text-muted/50 tracking-wider text-center">
-            <span className="text-wo-amber/60">{'>'}_</span> ready to start? let&apos;s talk about your vision...
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center gap-6">
-            <a href="mailto:contact@webovens.in" id="contact-email" className="group relative px-8 py-4 border border-wo-amber/30 bg-wo-amber/5 font-mono text-[11px] uppercase tracking-[0.2em] text-wo-amber hover:bg-wo-amber hover:text-wo-bg transition-all duration-500">
-              <span className="flex items-center gap-3">
-                contact@webovens.in
-                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /></svg>
-              </span>
-            </a>
-            <span className="hidden sm:block font-mono text-wo-text-muted/20 text-[12px]">//</span>
-            <a href="/contact" id="contact-form-link" className="font-mono text-[11px] uppercase tracking-[0.2em] text-wo-text-muted hover:text-wo-amber transition-colors duration-300 border-b border-wo-border hover:border-wo-amber/30 pb-1">
-              Or fill out a brief →
-            </a>
+            {/* Right side: Form Card */}
+            <div className="lg:col-span-6">
+              <ContactForm />
+            </div>
           </div>
-        </motion.div>
+        ) : (
+          <>
+            <div className="max-w-5xl mx-auto text-center mb-20">
+              <ScrollRevealText
+                text="Let's build something iconic together. Your vision deserves nothing less than extraordinary."
+                as="h2"
+                className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-[84px] leading-[1.05] tracking-tight"
+                revealStart={0.9}
+                revealEnd={0.3}
+              />
+            </div>
+
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="flex flex-col items-center gap-12">
+              <p className="font-mono text-[12px] md:text-[14px] text-wo-text-muted/50 tracking-wider text-center">
+                <span className="text-wo-amber/60">{'>'}_</span> ready to start? let&apos;s talk about your vision...
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center gap-6">
+                <a href="mailto:webovens.in@gmail.com" id="contact-email" className="group relative px-8 py-4 border border-wo-amber/30 bg-wo-amber/5 font-mono text-[11px] uppercase tracking-[0.2em] text-wo-amber hover:bg-wo-amber hover:text-wo-bg transition-all duration-500">
+                  <span className="flex items-center gap-3">
+                    webovens.in@gmail.com
+                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /></svg>
+                  </span>
+                </a>
+                <span className="hidden sm:block font-mono text-wo-text-muted/20 text-[12px]">//</span>
+                <a href="/contact" id="contact-form-link" className="font-mono text-[11px] uppercase tracking-[0.2em] text-wo-text-muted hover:text-wo-amber transition-colors duration-300 border-b border-wo-border hover:border-wo-amber/30 pb-1">
+                  Or fill out a brief →
+                </a>
+              </div>
+            </motion.div>
+          </>
+        )}
       </div>
 
       {/* Info Grid */}
