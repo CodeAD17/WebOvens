@@ -72,7 +72,7 @@ export default function Contact() {
                     <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /></svg>
                   </span>
                 </a>
-                <span className="hidden sm:block font-mono text-wo-text-muted/20 text-[12px]">//</span>
+                <span className="hidden sm:block font-mono text-wo-text-muted/20 text-[12px]">{'//'}</span>
                 <a href="/contact" id="contact-form-link" className="font-mono text-[11px] uppercase tracking-[0.2em] text-wo-text-muted hover:text-wo-amber transition-colors duration-300 border-b border-wo-border hover:border-wo-amber/30 pb-1">
                   Or fill out a brief →
                 </a>

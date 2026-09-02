@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
 import emailjs from '@emailjs/browser';
 import { Mail, Instagram, Linkedin, Check } from 'lucide-react';
@@ -187,7 +188,7 @@ export default function ContactForm() {
                 <span className="hidden sm:inline font-mono text-[9px] uppercase tracking-[0.25em] text-wo-text-muted">Or find us on</span>
                 <div className="flex items-center gap-2">
                   {[
-                    { icon: Linkedin, href: 'https://linkedin.com/company/webovens', label: 'LinkedIn' },
+                    { icon: Linkedin, href: 'https://www.linkedin.com/company/webovens/', label: 'LinkedIn' },
                     { icon: Instagram, href: 'https://www.instagram.com/webovens.in/', label: 'Instagram' },
                   ].map((social, i) => (
                     <a
@@ -290,9 +291,7 @@ export default function ContactForm() {
               </div>
             </div>
 
-
-
-            {/* Submit Button */}
+            {/* Submit Button & Actions */}
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
               <span className="font-mono text-[9px] text-wo-text-muted/40">
                 {`* All transmission protocols secured`}
@@ -320,6 +319,18 @@ export default function ContactForm() {
                 )}
               </button>
             </div>
+
+            {/* Privacy Policy Notice */}
+            <p className="pt-2 font-mono text-[10px] text-wo-text-muted/60 leading-relaxed text-center sm:text-right">
+              By submitting this form, you acknowledge our{' '}
+              <Link
+                href="/privacy-policy"
+                className="text-wo-amber/90 hover:text-wo-amber underline underline-offset-2 transition-colors font-medium"
+              >
+                Privacy Policy
+              </Link>{' '}
+              and understand that WebOvens may use the information you provide to respond to your enquiry and discuss your project.
+            </p>
           </motion.form>
         )}
       </AnimatePresence>
