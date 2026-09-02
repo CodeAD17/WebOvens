@@ -12,10 +12,10 @@ export default function Footer() {
   ];
 
   const socials = [
-    { name: 'LINKEDIN', href: '#' },
-    { name: 'TWITTER', href: '#' },
-    { name: 'DRIBBBLE', href: '#' },
-    { name: 'INSTAGRAM', href: '#' },
+    { name: 'LINKEDIN', href: 'https://www.linkedin.com/company/webovens/' },
+    { name: 'INSTAGRAM', href: 'https://www.instagram.com/webovens.in/' },
+    { name: 'TWITTER', href: 'https://twitter.com/webovens' },
+    { name: 'DRIBBBLE', href: 'https://dribbble.com/webovens' },
   ];
 
   return (
@@ -63,7 +63,6 @@ export default function Footer() {
                 { name: 'About', href: '/about' },
                 { name: 'Insights', href: '/blog' },
                 { name: 'Contact', href: '/contact' },
-                { name: 'Careers', href: '#' },
               ].map((link) => (
                 <Link key={link.name} href={link.href} className="font-mono text-[11px] tracking-[0.1em] text-wo-text-muted/50 hover:text-wo-amber transition-colors duration-300">
                   {link.name}
@@ -81,7 +80,13 @@ export default function Footer() {
             <div className="flex flex-wrap gap-4">
               {socials.map((social, i) => (
                 <span key={i} className="flex items-center gap-1">
-                  <a href={social.href} className="font-mono text-[10px] tracking-[0.1em] text-wo-text-muted/40 hover:text-wo-amber transition-colors duration-300" aria-label={`Visit our ${social.name} page`}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-[10px] tracking-[0.1em] text-wo-text-muted/40 hover:text-wo-amber transition-colors duration-300"
+                    aria-label={`Visit our ${social.name} page`}
+                  >
                     {social.name}
                   </a>
                   {i < socials.length - 1 && <span className="text-wo-text-muted/15 ml-3 font-mono text-[10px]">/</span>}
@@ -93,9 +98,23 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-wo-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="font-mono text-[9px] tracking-[0.15em] uppercase text-wo-text-muted/30">
-            © {new Date().getFullYear()} WEBOVENS.STUDIO // ALL RIGHTS RESERVED
-          </p>
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-2 font-mono text-[9px] tracking-[0.15em] uppercase text-wo-text-muted/40">
+            <span>© 2026 WebOvens. All Rights Reserved.</span>
+            <span className="text-wo-border">/</span>
+            <Link
+              href="/privacy-policy"
+              className="hover:text-wo-amber transition-colors duration-300"
+            >
+              Privacy Policy
+            </Link>
+            <span className="text-wo-border">/</span>
+            <Link
+              href="/terms-and-conditions"
+              className="hover:text-wo-amber transition-colors duration-300"
+            >
+              Terms & Conditions
+            </Link>
+          </div>
           <div className="flex items-center gap-4">
             <span className="font-mono text-[9px] tracking-[0.15em] text-wo-text-muted/20">ENGINEERED WITH OBSESSION</span>
             <div className="w-1.5 h-1.5 bg-wo-amber/40 rounded-full" />

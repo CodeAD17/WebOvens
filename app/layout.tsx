@@ -86,9 +86,9 @@ const jsonLd = {
   },
   sameAs: [
     'https://twitter.com/webovens',
-    'https://linkedin.com/company/webovens',
+    'https://www.linkedin.com/company/webovens/',
     'https://dribbble.com/webovens',
-    'https://instagram.com/webovens',
+    'https://www.instagram.com/webovens.in/',
   ],
 };
 
